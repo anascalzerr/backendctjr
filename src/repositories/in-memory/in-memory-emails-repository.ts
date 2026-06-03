@@ -15,15 +15,21 @@ export class InMemoryEmailsRepository implements EmailsRepository {
         return this.items.filter(item => item.idDeQuemRecebeu == idDeQuemRecebeu)
     }
 
+    async findManyByRemetente(userId: string) {
+        return this.items
+            .filter((email) => email.idDeQuemEnviou == userId)
+            .sort((a, b) => b.data.getTime() - a.data.getTime())
+    }
+
     async delete(id: string) {
         this.items = this.items.filter(item => item.id !== id)
     }
 
-    async create(data: Prisma.EmailCreateInput) {
+    async create(data: Prisma.EmailCreateInput& { data?: Date }) {
         const email = {
             id: randomUUID(),
             title: data.title,
-            data: new Date(),
+            data: data.data ?? new Date(),
             content: data.content,
             jaVisto: data.jaVisto ?? false,
             idDeQuemEnviou: data.idDeQuemEnviou as string,

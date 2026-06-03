@@ -1,14 +1,11 @@
 import { EmailNaoEncontradoError } from "@/services/errors/email-nao-encontrado-error.js";
-import { NaoAutorizadoError } from "@/services/errors/nao-autorizado-error.js";
-import { ResourceNotFoundError } from "@/services/errors/resource-not-found-error.js";
 import { makeGetMandarEmailUseCase } from "@/services/factories/fazer-caso-de-uso-de-mandar-email.js";
-import { makeGetDeletarEmaillUseCase } from "@/services/factories/fazer-caso-de-uso-deletar-email.js";
 import type { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
 
 export async function mandarEmail(request: FastifyRequest, reply: FastifyReply) {
         const bodySchema = z.object({
-            emailDestinatario: z.string().email(),
+            emailDestinatario: z.string(),
             title: z.string(),
             content: z.string(),
         })

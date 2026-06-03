@@ -21,6 +21,15 @@ export class PrismaEmailsRepository implements EmailsRepository {
         return emails
     }
 
+    async findManyByRemetente(userId: string) {
+        const emails = await prisma.email.findMany({
+            where: { idDeQuemEnviou: userId },
+            orderBy: { data: 'desc'}
+        })
+
+        return emails
+    }
+
     async delete(id: string) {
         await prisma.email.delete({
             where: { id }
@@ -31,7 +40,6 @@ export class PrismaEmailsRepository implements EmailsRepository {
         const email = await prisma.email.create({
         data,
     })
-
 
     return email
     }

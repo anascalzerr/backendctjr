@@ -10,8 +10,8 @@ Email da CT
 - [X] Deve ser possível editar imagem de perfil;
 - [X] Deve ser possível editar nome;
 - [X] Deve ser possível deletar email;
-- [ ] Deve ser possível mandar e-mail;
-- [ ] Deve ser possível ver emails enviados;
+- [X] Deve ser possível mandar e-mail;
+- [X] Deve ser possível ver emails enviados;
 - [ ] Deve ser possível ver um email específico;
 
 ## Regras de negócio
@@ -20,8 +20,8 @@ Email da CT
 - [X] Não deve ser possível deletar um e-mail que já foi visto pelo destinatário;
 - [X] Apenas o remetente pode deletar o e-mail;
 - [X] Depois de ler um email, o campo 'jaVisto' deve ser atualizado para 'true';
+- [X] Ao mandar e-mail, o destinatário deve existir no banco;
 - [ ] Apenas o destinatário ou remetente podem ver um e-mail;
-- [ ] Ao mandar e-mail, o destinatário deve existir no banco;
 
 ## Requisitos não-funcionais
 
