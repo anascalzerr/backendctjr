@@ -1,0 +1,15 @@
+# docker compose up -d && docker compose down (deleta todos os containers)
+# docker compose stop
+
+version: '3'
+
+services:
+  api-solid-pg:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=ignitenode03
+
