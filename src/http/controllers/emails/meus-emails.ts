@@ -1,7 +1,7 @@
 import { makeGetMeusEmailsUseCase } from "@/services/factories/fazer-caso-de-uso-de-meus-emails.js";
 import type { FastifyReply, FastifyRequest } from "fastify";
 
-export async function deletarEmail(request: FastifyRequest, reply: FastifyReply) {
+export async function getMeusEmails(request: FastifyRequest, reply: FastifyReply) {
     const userId = request.user.sub
 
     const GetMeusEmailsUseCase = makeGetMeusEmailsUseCase()
