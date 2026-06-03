@@ -8,8 +8,8 @@ Email da CT
 - [X] Deve ser possivel se autenticar;
 - [X] Deve ser possível retornar emails recebidos;
 - [X] Deve ser possível editar imagem de perfil;
-- [ ] Deve ser possível editar nome;
-- [ ] Deve ser possível deletar email;
+- [X] Deve ser possível editar nome;
+- [X] Deve ser possível deletar email;
 - [ ] Deve ser possível mandar e-mail;
 - [ ] Deve ser possível ver emails enviados;
 - [ ] Deve ser possível ver um email específico;
@@ -17,9 +17,9 @@ Email da CT
 ## Regras de negócio
 
 - [x] Não deve ser possível criar conta com e-mail duplicado;
-- [ ] Não deve ser possível deletar um e-mail que já foi visto pelo destinatário;
-- [ ] Apenas o remetente pode deletar o e-mail;
-- [ ] Depois de ler um email, o campo 'jaVisto' deve ser atualizado para 'true';
+- [X] Não deve ser possível deletar um e-mail que já foi visto pelo destinatário;
+- [X] Apenas o remetente pode deletar o e-mail;
+- [X] Depois de ler um email, o campo 'jaVisto' deve ser atualizado para 'true';
 - [ ] Apenas o destinatário ou remetente podem ver um e-mail;
 - [ ] Ao mandar e-mail, o destinatário deve existir no banco;
 
