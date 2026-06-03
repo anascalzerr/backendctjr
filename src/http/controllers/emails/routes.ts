@@ -4,10 +4,12 @@ import { getMeusEmails } from "./meus-emails.js";
 import { getDeletarEmail } from "./deletar-email.js";
 import { mandarEmail } from "./mandar-email.js";
 import { getEmailsEnviados } from "./emails-enviados.js";
+import { verEmail } from "./ver-email.js";
 
 export async function emailsRoutes(app: FastifyInstance) {
     app.get('/my-emails', { onRequest: [verifyJWT] }, getMeusEmails)
     app.get('/sent-emails', { onRequest: [verifyJWT] }, getEmailsEnviados)
+    app.get('/email/:id', { onRequest: [verifyJWT] }, verEmail)
 
     app.delete('/email/:id', { onRequest: [verifyJWT] }, getDeletarEmail)
 

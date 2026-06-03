@@ -6,4 +6,5 @@ export interface EmailsRepository {
     findByDestinatario(idDeQuemRecebeu: string): Promise<Email[]>
     findById(id: string): Promise<Email | null>
     delete(id: string): Promise<void>
+    save(email: Email): Promise<Email>
 }

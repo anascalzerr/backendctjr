@@ -25,6 +25,16 @@ export class InMemoryEmailsRepository implements EmailsRepository {
         this.items = this.items.filter(item => item.id !== id)
     }
 
+    async save(email: Email) {
+        const emailIndex = this.items.findIndex((item) => item.id == email.id)
+
+        if(emailIndex >= 0) {
+            this.items[emailIndex] = email
+        }
+
+        return email
+    }
+
     async create(data: Prisma.EmailCreateInput& { data?: Date }) {
         const email = {
             id: randomUUID(),

@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma.js"
-import { Prisma } from '@prisma/client'
+import { Prisma, type Email } from '@prisma/client'
 import type { EmailsRepository } from "../emails-repository.js"
 
 export class PrismaEmailsRepository implements EmailsRepository {
@@ -28,6 +28,22 @@ export class PrismaEmailsRepository implements EmailsRepository {
         })
 
         return emails
+    }
+
+    async save(email: Email) {
+        const emailSalvo = await prisma.email.update({
+            where: { id: email.id },
+            data: {
+                title: email.title,
+                content: email.content,
+                data: email.data,
+                jaVisto: email.jaVisto,
+                idDeQuemEnviou: email.idDeQuemEnviou,
+                idDeQuemRecebeu: email.idDeQuemRecebeu,
+            },
+        })
+
+        return emailSalvo
     }
 
     async delete(id: string) {
