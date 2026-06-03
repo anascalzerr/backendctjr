@@ -12,7 +12,7 @@ Email da CT
 - [X] Deve ser possível deletar email;
 - [X] Deve ser possível mandar e-mail;
 - [X] Deve ser possível ver emails enviados;
-- [ ] Deve ser possível ver um email específico;
+- [X] Deve ser possível ver um email específico;
 
 ## Regras de negócio
 
@@ -21,7 +21,7 @@ Email da CT
 - [X] Apenas o remetente pode deletar o e-mail;
 - [X] Depois de ler um email, o campo 'jaVisto' deve ser atualizado para 'true';
 - [X] Ao mandar e-mail, o destinatário deve existir no banco;
-- [ ] Apenas o destinatário ou remetente podem ver um e-mail;
+- [X] Apenas o destinatário ou remetente podem ver um e-mail;
 
 ## Requisitos não-funcionais
 
