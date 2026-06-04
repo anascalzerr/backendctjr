@@ -5,8 +5,14 @@ import { env } from "./env/index.js"
 import fastifyJwt from "@fastify/jwt"
 import { usersRoutes } from "./http/controllers/users/routes.js"
 import { emailsRoutes } from "./http/controllers/emails/routes.js"
+import cors from '@fastify/cors'
 
 export const app = fastify()
+
+app.register(cors, {
+    origin: 'http://localhost:5174',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+})
 
 app.register(fastifyJwt, {
     secret: 'env.JWT_SECRET',
