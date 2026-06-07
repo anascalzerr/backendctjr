@@ -1,7 +1,7 @@
 {
-  "name": "03-api-solid",
+  "name": "backendctjr",
   "version": "1.0.0",
-  "description": "GymPass style app.",
+  "description": "Email da CT",
   "main": "index.js",
   "scripts": {
     "start:dev": "tsx watch src/server.ts",
@@ -28,7 +28,7 @@
     "@vitest/ui": "4.1.7",
     "prisma": "5.22.0",
     "supertest": "7.2.2",
-    "tsup": "^8.5.1",
+    "tsup": "8.5.1",
     "tsx": "^4.22.2",
     "typescript": "^6.0.3",
     "vite": "8.0.14",
@@ -44,6 +44,7 @@
     "dayjs": "1.11.20",
     "dotenv": "17.4.2",
     "fastify": "^5.8.5",
+    "pg": "8.21.0",
     "zod": "4.4.3"
   }
 }
