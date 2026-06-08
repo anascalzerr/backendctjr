@@ -1,17 +1,17 @@
 import { expect, describe, it, beforeEach } from 'vitest'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository.js'
 import { hash } from 'bcryptjs'
-import { EditarImagemPerfilUseCase } from './editar-imagem-de-perfil.js'
+import { EditarNomeUseCase } from './editar-nome.js'
 
 let usersRepository: InMemoryUsersRepository
-let sut: EditarImagemPerfilUseCase
+let sut: EditarNomeUseCase
 
-describe('Editar Imagem de Perfil Use Case', () => {
+describe('Editar Nome Use Case', () => {
     beforeEach(() => {
         usersRepository = new InMemoryUsersRepository()
-        sut = new EditarImagemPerfilUseCase(usersRepository)
+        sut = new EditarNomeUseCase(usersRepository)
     })
-    it('deve ser possivel editar nome do usuario', async () => {
+    it('deve ser possivel editar nome', async () => {
         const userNovo = await usersRepository.create({
             nome: 'Fulano de tal',
             email: 'fulanodetal@exemplo.com',
@@ -20,10 +20,10 @@ describe('Editar Imagem de Perfil Use Case', () => {
 
         const { user } = await sut.execute({
             userId: userNovo.id,
-            fotoDePerfil: 'https://urlaleatorio.com/iconpfp.jpg',
+            nome: 'Fulaninho de Talzeiro',
         })
 
-        expect(user.fotoDePerfil).toEqual('https://urlaleatorio.com/iconpfp.jpg')
+        expect(user.nome).toEqual('Fulaninho de Talzeiro')
     })
 
 })
